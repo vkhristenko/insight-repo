@@ -48,6 +48,8 @@ function setup_testing_input_output {
   cp -r ${PROJECT_PATH}/run.sh ${TEST_OUTPUT_PATH}
   cp -r ${PROJECT_PATH}/log_input ${TEST_OUTPUT_PATH}
   cp -r ${PROJECT_PATH}/log_output ${TEST_OUTPUT_PATH}
+  cp ${PROJECT_PATH}/build.sbt ${TEST_OUTPUT_PATH}
+  cp -r ${PROJECT_PATH}/project ${TEST_OUTPUT_PATH}
 
   rm -r ${TEST_OUTPUT_PATH}/log_input/*
   rm -r ${TEST_OUTPUT_PATH}/log_output/*
