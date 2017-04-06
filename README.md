@@ -30,8 +30,12 @@ For this task, I've created a LoginManager class that is responsible for accepti
 At first, I didn't understand the point of Feature 3 assignment. In general, I do not think that it's important from both technical and business points of view to know up to a second the busiest hours. A much cleaner idea is to separate by the hour of the day and identify periods during the day that are the busiest ones. In the log\_output directory you can find a file: F3-like.txt that will identify the top 10 busiest hours out of all them. Here, it's natural to use Spark's ability and API to group the Events by the hour and then further process.
 
 # Requirements and Dependencies
-- Apache Spark >= 2.0
+- Apache Spark >= 2.0 and having spark-submit in the `$PATH`
 - Scala 2.11
 
 # General Comments
-
+- No Personal Unit Tests...
+- I assume you are running from the root repo folder with just:
+```
+bash run.sh
+```
