@@ -78,12 +78,16 @@ object MetricsProviderSparkApp {
     for (line <- Source.fromFile(inputFileName)(decoder).getLines) {
       val event = parseWithRE(line)
       manager.register(event)
+      // NOTE: important to reinitialize with the starting reference time!
       if (counter==0L)
         timeFrame = new TimeFrame(event.timestamp)
       timeFrame.register(event)
       counter += 1L
     }
+    // close the printer for F4
     manager.printer.close
+
+    // finalize the F3 stuff
     timeFrame.flush(timeFrame.window)
     val outF3 = new PrintWriter(new File(outputF3))
     for (x <- timeFrame.busiest) outF3.write(s"${x._1},${x._2}\n")
