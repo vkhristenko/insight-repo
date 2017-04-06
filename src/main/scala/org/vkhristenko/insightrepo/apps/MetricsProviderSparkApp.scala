@@ -78,6 +78,7 @@ object MetricsProviderSparkApp {
     for (line <- Source.fromFile(inputFileName)(decoder).getLines) {
       val event = parseWithRE(line)
       manager.register(event)
+      // NOTE: important to reinitialize with the starting reference time!
       if (counter==0L)
         timeFrame = new TimeFrame(event.timestamp)
       timeFrame.register(event)

@@ -1,9 +1,16 @@
 # Insight Data Engineering Coding Challenge.
 1. [Solution Description](README.md#solution-description)
 2. [Requirements and Dependencies](README.md#requirements-dependencies)
+3. [General Comments](README.md#general-comments)
 
 # Solution Description
 In general, I was trying to provide all the features via Spark's Datasets. The reason is simple - scalability without changing any piece of the code. However, both F3 and F4 I was not able to solve via just datasets. 
+
+### Code Organization
+- apps/MetricsProviderSparkApp.scala - driver with Spark
+- common/package.scala provides a set of common definitions/declarataions for this project
+- login/LoginManager.scala - responsible for managing login attempts/blocking/tracking failures. Represented as 2 HashMaps, which get cleaned (either every 5mins or 20s basically)
+- frame/TimeFrame.scala - models a sliding Time Window without storing all of the information for the whole dataset. **The idea is to avoid multiple passes over the data**
 
 ### Feature 1:
 **Solution:** A simple query: grouping rows by host name and counting within each group. 
@@ -25,3 +32,6 @@ At first, I didn't understand the point of Feature 3 assignment. In general, I d
 # Requirements and Dependencies
 - Apache Spark >= 2.0
 - Scala 2.11
+
+# General Comments
+
