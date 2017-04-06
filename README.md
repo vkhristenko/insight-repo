@@ -39,3 +39,4 @@ At first, I didn't understand the point of Feature 3 assignment. In general, I d
 ```
 bash run.sh
 ```
+- All 4 provided basic tests have passed
