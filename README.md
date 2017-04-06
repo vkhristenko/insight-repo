@@ -40,3 +40,4 @@ At first, I didn't understand the point of Feature 3 assignment. In general, I d
 bash run.sh
 ```
 - All 4 provided basic tests have passed
+- I had to make updates to the run\_tests.sh file in order to cp several additional files/folders
